@@ -1,0 +1,13 @@
+[Unit]
+Description=Read-only Cron Evidence API
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+ExecStart=/usr/bin/python3 /usr/local/bin/cron_evidence.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
